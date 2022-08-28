@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Extraction des informations</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1> Extraction des informations des factures </h1>  
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
+    <img src="https://nanonets.com/media/invoice-footage-2_4.gif" width="500" height="=300">     <img src="https://assets-global.website-files.com/5f689f82910c6b4f1ffb855b/6166dfebe9e3d96989f0832b_Invoice%20Data%20Extraction%20using%20OCR%20%26%20Machine%20Learning%20Main%20image.jpg" width="500" height="=300">    
+    <br>
+    <h2> Réduire les erreurs d'entrée de données des factures</h2>
+    <br>
+    <img src="https://www.1min30.com/wp-content/uploads/2017/07/Embl%C3%A8me-Carrefour.jpg" width="300" height="=69">    <img src="https://www.utic.tn/wp-content/uploads/2019/10/logo-cash-and-carry.png" width="300" height="=117">    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBcFTR9cilTaeFd8n8C7kxI63zgkGWBxhuktANDiA4qvM1N4PtX4EBvD26a-sDZ0JA1A&usqp=CAU" width="300" height="=120">
+    <br>
+    <img src="https://www.leaders.com.tn/uploads/FCK_files/Logo-MG1.jpg" width="300" height="=55">    <img src="https://offres-5edma.com/wp-content/uploads/2020/02/aziza-logo.jpg" width="300" height="=120">
+    <br>
+    <br>
+    <form action="/" method="post" enctype="multipart/form-data">
+        <br>
+        <input type="file" name="pdffile" id="import" hidden/>
+
+        <label for="import">Choisir fichier</label>
+        <br>
+        <br>
+        <input type="submit" value="Valider" id="greet">
+    </form>
+
+    {% if prediction %}
+       {% for i in prediction %}
+           <p> {{i}} </p>
+        {% endfor %}   
+    {% endif %}
+</body>
+</html>
